@@ -22,7 +22,7 @@ Quizzers is a dynamic quiz application tailored for technology enthusiasts. It g
 
 ## Demo
 
-A live demo of Quizzers is available [here](https://quiizers-nine.vercel.app/). Please note that this demo version is for exploration purposes only and may not represent the full functionality of the application.
+A live demo of Quizzers is available [here](https://quizzers-nine.vercel.app/). Please note that this demo version is for exploration purposes only and may not represent the full functionality of the application.
 
 ## Getting Started
 
