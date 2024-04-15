@@ -1,7 +1,11 @@
 {
+  "/_not-found": "app/_not-found.js",
+  "/api/quiz/check/route": "app/api/quiz/check/route.js",
   "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js",
   "/quizzes/generate/page": "app/quizzes/generate/page.js",
   "/quizzes/random/page": "app/quizzes/random/page.js",
-  "/api/quiz/check/route": "app/api/quiz/check/route.js",
-  "/quizzes/result/page": "app/quizzes/result/page.js"
+  "/quizzes/result/page": "app/quizzes/result/page.js",
+  "/(auth)/register/page": "app/(auth)/register/page.js",
+  "/(auth)/signin/page": "app/(auth)/signin/page.js"
 }

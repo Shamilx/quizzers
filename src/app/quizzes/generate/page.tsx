@@ -7,8 +7,9 @@ import { redirect } from "next/navigation";
 export default async function DoQuiz({ searchParams }: Props) {
   const quiz: TypeQuiz = await getQuizWithProps({ searchParams });
   
-  if(quiz.error)
-    redirect('/not-found');
+  if(quiz.error) {
+    console.log(quiz.error)
+  }
 
   return (
     <div className="mx-5 mt-10 flex-1 rounded-3xl border border-black p-5">
