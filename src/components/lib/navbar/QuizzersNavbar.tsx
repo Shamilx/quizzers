@@ -2,7 +2,7 @@ import Link from "next/link";
 
 // Components
 import Line from "@/components/lib/icons/line/Line";
-import Profile from "@/components/lib/profile/Profile";
+import Profile from "@/components/lib/navbar/profile/Profile";
 import QuizzersNavbarWrapper from "@/components/lib/navbar/QuizzersNavbarWrapper";
 import QuizzersMobileNavbar from "./QuizzersMobileNavbar";
 

@@ -1,29 +1,56 @@
+import { secureQuiz } from "@/app/api/quiz/_lib/secureQuiz";
+
+async function fetchQuizFromServerWithProps(
+  category: string,
+  difficulty: string,
+  limit: string,
+) {
+  const endpoint = `https://quizapi.io/api/v1/questions?apiKey=${process.env.API_KEY}`;
+  const apiReqData = `difficulty=${difficulty}&category=${category}&limit=${limit}`;
+
+  const quizRes = await fetch(endpoint.concat(`&${apiReqData}`), {
+    cache: "no-cache",
+  });
+
+  const quiz = await quizRes.json();
+
+  if (quizRes.status !== 200) {
+    return quiz;
+  }
+
+  const newQuiz = secureQuiz(quiz);
+  return newQuiz;
+}
+
+async function fetchRandomQuiz() {
+  const endpoint = `https://quizapi.io/api/v1/questions?apiKey=${process.env.API_KEY}`;
+  const quizRes = await fetch(endpoint, { cache: "no-cache" });
+  const quiz = await quizRes.json();
+
+  if (quizRes.status !== 200) {
+    return quiz;
+  }
+
+  const newQuiz = secureQuiz(quiz);
+  return newQuiz;
+}
+
 export type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function fetchQuizWithProps({ searchParams }: Props) {
+export async function getQuizWithProps({ searchParams }: Props) {
   const category = searchParams.category;
   const difficulty = searchParams.difficulty;
   const limit = searchParams.questions;
 
-  const requestedPropsFromAPI = { category, difficulty, limit };
-
-  return (
-    await fetch(`https://quizzers-nine.vercel.app/api/quiz/generate`, {
-      method: "POST",
-      body: JSON.stringify(requestedPropsFromAPI),
-      cache: "no-cache",
-    })
-  ).json();
+  return await fetchQuizFromServerWithProps(
+    category as string,
+    difficulty as string,
+    limit as string,
+  );
 }
 
 export async function getRandomQuiz() {
-  const randQuizRes = await fetch(`https://quizzers-nine.vercel.app/api/quiz/rand`, {
-    cache: "no-cache",
-  });
-
-  const quiz = await randQuizRes.json();
-
-  return quiz;
+  return await fetchRandomQuiz();
 }

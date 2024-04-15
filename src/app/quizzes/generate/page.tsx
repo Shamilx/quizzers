@@ -1,13 +1,14 @@
 import QuestionWrapper from "@/components/lib/do-quiz/QuestionWrapper";
 import { TypeQuiz } from "@/types/retrieved_quiz";
-import { redirect } from "next/navigation";
-import { fetchQuizWithProps, Props } from "../_lib/get/getQuestions";
+import { getQuizWithProps, Props } from "../_lib/get/getQuestions";
 import Form from "../_lib/form/form";
+import { redirect } from "next/navigation";
 
 export default async function DoQuiz({ searchParams }: Props) {
-  const quiz: TypeQuiz = await fetchQuizWithProps({ searchParams });
-
-  if (quiz.error) redirect(`/not-found`);
+  const quiz: TypeQuiz = await getQuizWithProps({ searchParams });
+  
+  if(quiz.error)
+    redirect('/not-found');
 
   return (
     <div className="mx-5 mt-10 flex-1 rounded-3xl border border-black p-5">

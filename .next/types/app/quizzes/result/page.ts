@@ -1,4 +1,4 @@
-// File: C:\Users\user\Desktop\quizzers\src\app\quizzes\result\page.tsx
+// File: C:\Users\user\Desktop\quizzers-fail2\src\app\quizzes\result\page.tsx
 import * as entry from '../../../../../src/app/quizzes/result/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

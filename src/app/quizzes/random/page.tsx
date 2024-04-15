@@ -2,9 +2,12 @@ import QuestionWrapper from "@/components/lib/do-quiz/QuestionWrapper";
 import { TypeQuiz } from "@/types/retrieved_quiz";
 import { getRandomQuiz } from "../_lib/get/getQuestions";
 import Form from "../_lib/form/form";
+import { redirect } from "next/navigation";
 
 export default async function Random() {
   const quiz: TypeQuiz = await getRandomQuiz();
+
+  if (quiz.error) redirect("/not-found");
 
   return (
     <div className="mx-5 mt-10 flex-1 rounded-3xl border border-black p-5">

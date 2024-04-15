@@ -9,7 +9,7 @@ export default function Home() {
     const difficulty = e.get("difficulty");
     const questions = e.get("questions");
 
-    redirect(`https://quizzers-nine.vercel.app/quizzes/generate?category=${category}&difficulty=${difficulty}&questions=${questions}`)
+    redirect(`/quizzes/generate?category=${category}&difficulty=${difficulty}&questions=${questions}`)
   };
 
   return (

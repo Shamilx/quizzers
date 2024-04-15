@@ -1,4 +1,4 @@
-// File: C:\Users\user\Desktop\quizzers\src\app\api\quiz\check\route.ts
+// File: C:\Users\user\Desktop\quizzers-fail2\src\app\api\quiz\check\route.ts
 import * as entry from '../../../../../../src/app/api/quiz/check/route.js'
 import type { NextRequest } from 'next/server.js'
 

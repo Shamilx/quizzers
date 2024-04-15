@@ -1,3 +1,7 @@
+
+// ONLY WORKS WITH CLIENT COMPONENTS!
+// BECAUSE IT CHECKES QUIZ ON API. /API/QUIZ/CHECK
+
 export async function checkQuiz(
   formdata: FormData,
   encrypted_asnwers: string[],
@@ -32,7 +36,7 @@ export async function checkQuiz(
     count++;
   }
 
-  const res = await fetch(`https://quizzers-nine.vercel.app/api/quiz/check`,{
+  const res = await fetch(`/api/quiz/check`,{
     method: "POST",
     body: JSON.stringify({sended_answers: answers,encrypted_asnwers})
   });
