@@ -33,12 +33,8 @@ To run Quizzers locally, follow these steps:
 1. Clone this repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd quizzers`
 3. Install dependencies: `npm install`
-4. Set up Firebase:
-   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
-   - Enable Authentication and Firestore in your Firebase project.
-   - Set up Firebase credentials and configurations in your Next.js app.
-5. Start the development server: `npm run dev`
-6. Open your browser and visit `http://localhost:3000` to view Quizzers locally.
+4. Start the development server: `npm run dev`
+5. Open your browser and visit `http://localhost:3000` to view Quizzers locally.
 
 ## Contributing
 
