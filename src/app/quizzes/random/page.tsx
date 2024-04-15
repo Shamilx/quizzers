@@ -9,6 +9,7 @@ export default async function Random() {
 
   if(quiz.error) {
     console.log(quiz.error)
+    redirect('/not-found');
   }
 
   return (

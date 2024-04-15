@@ -6,9 +6,10 @@ import { redirect } from "next/navigation";
 
 export default async function DoQuiz({ searchParams }: Props) {
   const quiz: TypeQuiz = await getQuizWithProps({ searchParams });
-  
-  if(quiz.error) {
-    console.log(quiz.error)
+
+  if (quiz.error) {
+    console.log(quiz.error);
+    redirect("/not-found");
   }
 
   return (
