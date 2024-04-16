@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { string_decryptor } from "../_lib/crypt/decrypt";
+import { string_decryptor } from "../../../_lib/tools/crypt/decrypt";
 
 export async function POST(req: NextRequest) {
   const { sended_answers, encrypted_asnwers } = await req.json();

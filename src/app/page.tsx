@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Form from "./_lib/Form";
+import Form from "@/components/lib/home-page-form/Form";
 
 export default function Home() {
   return (

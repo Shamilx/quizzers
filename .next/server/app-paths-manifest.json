@@ -1,5 +1,7 @@
 {
   "/page": "app/page.js",
   "/quizzes/generate/page": "app/quizzes/generate/page.js",
-  "/quizzes/random/page": "app/quizzes/random/page.js"
+  "/quizzes/result/page": "app/quizzes/result/page.js",
+  "/quizzes/random/page": "app/quizzes/random/page.js",
+  "/api/quiz/check/route": "app/api/quiz/check/route.js"
 }

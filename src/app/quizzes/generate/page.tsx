@@ -1,7 +1,7 @@
 import QuestionWrapper from "@/components/lib/do-quiz/QuestionWrapper";
 import { TypeQuiz } from "@/types/retrieved_quiz";
-import { getQuizWithProps, Props } from "../_lib/get/getQuestions";
-import Form from "../_lib/form/form";
+import { getQuizWithProps, Props } from "@/app/_lib/tools/getQuestions";
+import Form from "@/components/lib/quizzes-form/form";
 import { redirect } from "next/navigation";
 
 export default async function DoQuiz({ searchParams }: Props) {
