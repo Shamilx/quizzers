@@ -1,17 +1,7 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import Form from "./_lib/Form";
 
 export default function Home() {
-  const generateQuiz = async (e: FormData) => {
-    'use server';
-    
-    const category = e.get("category");
-    const difficulty = e.get("difficulty");
-    const questions = e.get("questions");
-
-    redirect(`/quizzes/generate?category=${category}&difficulty=${difficulty}&questions=${questions}`)
-  };
-
   return (
     <div className="flex h-[100vh] items-center">
       <div className="mx-5 flex flex-1 flex-col gap-3 md:flex-row">
@@ -22,7 +12,7 @@ export default function Home() {
         </div>
 
         <div className="min-h-[300px] flex-1 rounded-2xl border border-black">
-          <form className="p-5" action={generateQuiz}>
+          <Form className="p-5">
             <h2 className="text-center font-bold uppercase text-zinc-700">
               Generate Quiz
             </h2>
@@ -66,7 +56,7 @@ export default function Home() {
                 Generate Random
               </Link>
             </div>
-          </form>
+          </Form>
         </div>
       </div>
     </div>
