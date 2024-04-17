@@ -1,11 +1,10 @@
 "use client";
 
 import { FormEvent } from "react";
-import { getResults } from "@/app/_lib/tools/getResults";
+import { exportResultsFromForm } from "@/app/_lib/tools/exportResultsFromForm";
 import { TypeQuiz } from "@/types/retrieved_quiz";
 import { useRouter } from "next/navigation";
 import { useSessionAuth } from "@/firebase/components/auth-provider";
-import { saveUserResults } from "@/app/_lib/tools/setResults";
 
 type Props = {
   children: React.ReactNode;
@@ -19,14 +18,18 @@ export default function Form({ children, quiz }: Props) {
   const formHandler = async (e: FormEvent) => {
     e.preventDefault();
 
-    const results = await getResults(e, quiz);
+    const results = await exportResultsFromForm(e, quiz);
 
     if (!results) {
       alert("PLEASE DO ALL QUIZ.");
       return;
     }
 
-    if (auth?.user) saveUserResults(results.results, auth.user.email as string);
+    if (auth?.user)
+      await fetch("/api/quiz/results/save", {
+        method: "POST",
+        body: JSON.stringify({ results: results.results, userUID: auth.user.email }),
+      });
 
     router.replace(`result?results=${results.results}`);
   };
